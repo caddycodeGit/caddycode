@@ -20,7 +20,7 @@ import cucumber.api.junit.Cucumber;
 					monochrome=true,
 				plugin = { "com.cucumber.listener.ExtentCucumberFormatter:output/report.html"},
 				 glue= {"com.caddycode.stepDef"},
-					tags= {"@Test"})
+					tags= {"@Test1"})
 public class TestRunner {
 	
 	
