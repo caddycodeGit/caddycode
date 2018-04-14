@@ -6,7 +6,7 @@ Feature: Test Facebook Smoke Scenario
 		When I enter Valid User Name and password 
 		Then User should be able to login sucessfully
 		
-	@Test
+	@Test1
 	Scenario: SignupLanding Page for the new user
 	Given User navigates to the Landing Page
 	When  User perfrom SignUp operation
