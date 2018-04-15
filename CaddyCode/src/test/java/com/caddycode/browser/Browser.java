@@ -33,7 +33,7 @@ public class Browser {
 			Browser.LoadConfigFile();
 			Browser.launchApplication();
 			try {
-				driver.get(prop.getProperty("url"));
+				driver.get(prop.getProperty("Landingurl"));
 				driver.manage().window().maximize();
 				driver.manage().timeouts().implicitlyWait(30, TimeUnit.SECONDS);
 			}catch(Exception e)

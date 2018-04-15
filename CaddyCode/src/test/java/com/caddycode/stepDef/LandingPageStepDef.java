@@ -25,6 +25,8 @@ public class LandingPageStepDef extends Browser {
 	
 	@Given("^User navigates to the Landing Page$")
 	public void user_navigates_to_the_Landing_Page() throws Throwable {
+		String AdminURL = prop.getProperty("Landingurl");
+		Generic.navigateToURL(AdminURL);
 		Generic.clickElement("xpath", LandingSiteOR.landingSignUP);
 	}
 

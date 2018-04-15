@@ -1,11 +1,5 @@
 Feature: User needs to sign up the 6Landing page to get the login credentials
 
-	@Test1
-	Scenario: Test Login gmail with valid Credentials 
-		Given Open Firefox and start Application
-		When I enter Valid User Name and password 
-		Then User should be able to login sucessfully
-		
 	@Test
 	Scenario: SignupLanding Page for the new user
 	Given User navigates to the Landing Page
@@ -15,13 +9,6 @@ Feature: User needs to sign up the 6Landing page to get the login credentials
 	And   User perform GetstartedNow operation
 	Then  User verify welcome to 6Strorage page
 	
-	@Test1
-	Scenario: Login to Admin Portal
-	
-	Given User navigates to the Admin Page	
-	And   User provides the valid username and password
-	When  User performs sign operation
-	Then  User navigates to Admin homepage  
 	
 	
 	
