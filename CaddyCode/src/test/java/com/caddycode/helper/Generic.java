@@ -19,7 +19,6 @@ public class Generic extends Browser {
 	public static void navigateToURL(String url)
 	
 	{
-		
 		Browser.driver.get(url);
 	}
 	
