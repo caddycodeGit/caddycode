@@ -25,31 +25,27 @@ public class LandingPageStepDef extends Browser {
 	
 	@Given("^User navigates to the Landing Page$")
 	public void user_navigates_to_the_Landing_Page() throws Throwable {
-		String AdminURL = prop.getProperty("Landingurl");
-		Generic.navigateToURL(AdminURL);
-		Generic.clickElement("xpath", LandingSiteOR.landingSignUP);
+		String Landingurl = prop.getProperty("Landingurl");
+		Generic.navigateToURL(Landingurl);
+		Generic.verifyElement("xpath", LandingSiteOR.landingSignUP);
 	}
 
 	@When("^User perfrom SignUp operation$")
 	public void user_perfrom_SignUp_operation() throws Throwable {
-		Generic.verifyElement("xpath", LandingSiteOR.signupPage);
+		Generic.clickElement("xpath", LandingSiteOR.landingSignUP);
+
 	}
 
 	@Then("^User navigates the landing signup page$")
 	public void user_navigates_the_landing_signup_page() throws Throwable {
-	  }
+		Generic.verifyElement("id", LandingSiteOR.getStartedNOw);
+	}
 
 	@When("^User insert the signup information$")
 	public void user_insert_the_signup_information() throws Throwable {
 		Assert.assertTrue(landingsite.signUpForFree());
 	 	}
 
-	@When("^User perform GetstartedNow operation$")
-	public void user_perform_GetstartedNow_operation() throws Throwable {
-	
-	}
-
-	
 	@Then("^User verify welcome to (\\d+)Strorage page$")
 	public void user_verify_wwelcome_to_Strorage_page(int arg1) throws Throwable {
 		Assert.assertTrue(Generic.verifyElement("id", LandingSiteOR.registrationConfrim));

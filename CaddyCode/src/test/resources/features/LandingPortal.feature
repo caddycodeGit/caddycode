@@ -6,7 +6,6 @@ Feature: User needs to sign up the 6Landing page to get the login credentials
 	When  User perfrom SignUp operation
 	Then  User navigates the landing signup page
 	When  User insert the signup information
-	And   User perform GetstartedNow operation
 	Then  User verify welcome to 6Strorage page
 	
 	

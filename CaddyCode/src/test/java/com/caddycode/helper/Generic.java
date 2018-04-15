@@ -17,8 +17,10 @@ public class Generic extends Browser {
 	
 	
 	public static void navigateToURL(String url)
+	
 	{
-		driver.get(url);
+		
+		Browser.driver.get(url);
 	}
 	
 	
@@ -65,41 +67,38 @@ public class Generic extends Browser {
 	
 	public static boolean clickElement(String locator,String locatorVal)
 	{
-		boolean status = false;
-		List<WebElement> elements = null;
+		boolean status=false;
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebElement element=null;
 		switch(locator)
 		{
 		case "id":
-			elements = driver.findElements(By.id(locatorVal));
+			wait.until(ExpectedConditions.elementToBeClickable(By.id(locatorVal)));
+			element = driver.findElement(By.id(locatorVal));
 			break;
 		case "xpath":
-			elements = driver.findElements(By.xpath(locatorVal));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locatorVal)));
+			element = driver.findElement(By.xpath(locatorVal));
 			break;
 		case "className":
-			elements = driver.findElements(By.className(locatorVal));
+			wait.until(ExpectedConditions.elementToBeClickable(By.className(locatorVal)));
+			element = driver.findElement(By.className(locatorVal));
 			break;
 		case "name":
-			elements = driver.findElements(By.name(locatorVal));
+			wait.until(ExpectedConditions.elementToBeClickable(By.name(locatorVal)));
+			element = driver.findElement(By.name(locatorVal));
 			break;
+		
 		}
-		if(elements.size()>0)
+		if(element.isDisplayed() && element.isEnabled())
 		{
-			if(elements.get(0).isDisplayed() && elements.get(0).isEnabled())
-			{
-				elements.get(0).click();
-				status = true;
-			}
-			else
-			{
-				status = false;
-			}
+			element.click();
+			status = true;
 		}
 		else
 		{
 			status = false;
 		}
-			
-			
 		return status;
 		
 	}
@@ -117,19 +116,19 @@ public class Generic extends Browser {
 		switch(locator)
 		{
 		case "id":
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(locatorVal)));
+			wait.until(ExpectedConditions.elementToBeClickable(By.id(locatorVal)));
 			element = driver.findElement(By.id(locatorVal));
 			break;
 		case "xpath":
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(locatorVal)));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locatorVal)));
 			element = driver.findElement(By.xpath(locatorVal));
 			break;
 		case "className":
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className(locatorVal)));
+			wait.until(ExpectedConditions.elementToBeClickable(By.className(locatorVal)));
 			element = driver.findElement(By.className(locatorVal));
 			break;
 		case "name":
-			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.name(locatorVal)));
+			wait.until(ExpectedConditions.elementToBeClickable(By.name(locatorVal)));
 			element = driver.findElement(By.name(locatorVal));
 			break;
 		
@@ -150,42 +149,39 @@ public class Generic extends Browser {
 	
 	public static boolean enterValue(String locator,String locatorVal,String value)
 	{
-		boolean status = false;
-		List<WebElement> elements = null;
+		boolean status=false;
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		WebElement element=null;
 		switch(locator)
 		{
 		case "id":
-			elements = driver.findElements(By.id(locatorVal));
+			wait.until(ExpectedConditions.elementToBeClickable(By.id(locatorVal)));
+			element = driver.findElement(By.id(locatorVal));
 			break;
 		case "xpath":
-			elements = driver.findElements(By.xpath(locatorVal));
+			wait.until(ExpectedConditions.elementToBeClickable(By.xpath(locatorVal)));
+			element = driver.findElement(By.xpath(locatorVal));
 			break;
 		case "className":
-			elements = driver.findElements(By.className(locatorVal));
+			wait.until(ExpectedConditions.elementToBeClickable(By.className(locatorVal)));
+			element = driver.findElement(By.className(locatorVal));
 			break;
 		case "name":
-			elements = driver.findElements(By.name(locatorVal));
+			wait.until(ExpectedConditions.elementToBeClickable(By.name(locatorVal)));
+			element = driver.findElement(By.name(locatorVal));
 			break;
+		
 		}
-		if(elements.size()>0)
+		if(element.isDisplayed() && element.isEnabled())
 		{
-			if(elements.get(0).isDisplayed() && elements.get(0).isEnabled())
-			{
-				elements.get(0).clear();
-				elements.get(0).sendKeys(value);
-				status = true;
-			}
-			else
-			{
-				status = false;
-			}
+			element.clear();
+			element.sendKeys(value);
+			status = true;
 		}
 		else
 		{
 			status = false;
 		}
-			
-			
 		return status;
 		
 	}
