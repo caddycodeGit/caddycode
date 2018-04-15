@@ -1,6 +1,6 @@
 Feature: Test Facebook Smoke Scenario
 
-	@Test
+	@Test1
 	Scenario: Test Login gmail with valid Credentials 
 		Given Open Firefox and start Application
 		When I enter Valid User Name and password 
@@ -15,7 +15,7 @@ Feature: Test Facebook Smoke Scenario
 	And   User perform GetstartedNow operation
 	Then  User verify welcome to 6Strorage page
 	
-	@Test1
+	@Test
 	Scenario: Login to Admin Portal
 	
 	Given User navigates to the Admin Page	
