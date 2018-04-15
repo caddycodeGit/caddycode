@@ -33,7 +33,7 @@ public class LandingSitePageObj {
 		Generic.enterValue("id", LandingSiteOR.domailURl, dataArray[0].get("DomainURL"));
 		Generic.enterValue("id", LandingSiteOR.phoneNumber, dataArray[0].get("PhoneNumber"));
 		Generic.clickElement("id", LandingSiteOR.getStartedNOw);
-		Thread.sleep(3000);
+		Thread.sleep(5000);
 		status = true;
 		return status;
 	}

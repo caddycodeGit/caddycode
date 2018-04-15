@@ -6,6 +6,8 @@ import java.util.List;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.WebElement;
+import org.openqa.selenium.support.ui.ExpectedConditions;
+import org.openqa.selenium.support.ui.WebDriverWait;
 
 import com.caddycode.browser.Browser;
 
@@ -109,23 +111,30 @@ public class Generic extends Browser {
 	public static boolean verifyElement(String locator,String locatorVal)
 	{
 		boolean status = false;
-		List<WebElement> elements = null;
+		WebDriverWait wait = new WebDriverWait(driver,30);
+		
+		WebElement element=null;
 		switch(locator)
 		{
 		case "id":
-			elements = driver.findElements(By.id(locatorVal));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.id(locatorVal)));
+			element = driver.findElement(By.id(locatorVal));
 			break;
 		case "xpath":
-			elements = driver.findElements(By.xpath(locatorVal));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.xpath(locatorVal)));
+			element = driver.findElement(By.xpath(locatorVal));
 			break;
 		case "className":
-			elements = driver.findElements(By.className(locatorVal));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.className(locatorVal)));
+			element = driver.findElement(By.className(locatorVal));
 			break;
 		case "name":
-			elements = driver.findElements(By.name(locatorVal));
+			wait.until(ExpectedConditions.invisibilityOfElementLocated(By.name(locatorVal)));
+			element = driver.findElement(By.name(locatorVal));
 			break;
+		
 		}
-		if(elements.size()>0 && elements.get(0).isDisplayed() && elements.get(0).isEnabled())
+		if(element.isDisplayed() && element.isEnabled())
 		{
 			status = true;
 		}
