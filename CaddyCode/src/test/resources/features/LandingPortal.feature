@@ -1,4 +1,4 @@
-Feature: Test Facebook Smoke Scenario
+Feature: User needs to sign up the 6Landing page to get the login credentials
 
 	@Test1
 	Scenario: Test Login gmail with valid Credentials 
@@ -6,7 +6,7 @@ Feature: Test Facebook Smoke Scenario
 		When I enter Valid User Name and password 
 		Then User should be able to login sucessfully
 		
-	@Test1
+	@Test
 	Scenario: SignupLanding Page for the new user
 	Given User navigates to the Landing Page
 	When  User perfrom SignUp operation
@@ -15,7 +15,7 @@ Feature: Test Facebook Smoke Scenario
 	And   User perform GetstartedNow operation
 	Then  User verify welcome to 6Strorage page
 	
-	@Test
+	@Test1
 	Scenario: Login to Admin Portal
 	
 	Given User navigates to the Admin Page	
