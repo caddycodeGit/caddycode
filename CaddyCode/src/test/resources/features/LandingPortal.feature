@@ -1,6 +1,6 @@
 Feature: User needs to sign up the 6Landing page to get the login credentials
 
-	@Test
+	@Test1
 	Scenario: SignupLanding Page for the new user
 	Given User navigates to the Landing Page
 	When  User perfrom SignUp operation
