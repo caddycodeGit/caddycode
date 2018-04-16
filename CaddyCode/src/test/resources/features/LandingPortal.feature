@@ -15,4 +15,3 @@ Feature: User needs to sign up the 6Landing page to get the login credentials
 	Then  User verify welcome to 6Strorage page
 	
 	
-	

@@ -20,7 +20,6 @@ public class AdminPortalStepDef extends Browser{
 		Generic.navigateToURL(AdminURL);
 	}
 	
-
 	@Given("^User provides the valid username and password$")
 	public void user_provides_the_valid_password() throws Throwable {
 		admin.loginAdminPortal();

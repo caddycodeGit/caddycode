@@ -14,14 +14,10 @@ import cucumber.api.java.en.Then;
 import cucumber.api.java.en.When;
 
 public class LandingPageStepDef extends Browser {
-	
-	
 	LandingSitePageObj landingsite = new LandingSitePageObj();
 	public LandingPageStepDef() {
-	
 		super();
 	}
-	
 	
 	@Given("^User navigates to the Landing Page$")
 	public void user_navigates_to_the_Landing_Page() throws Throwable {
@@ -33,7 +29,6 @@ public class LandingPageStepDef extends Browser {
 	@When("^User perfrom SignUp operation$")
 	public void user_perfrom_SignUp_operation() throws Throwable {
 		Generic.clickElement("xpath", LandingSiteOR.landingSignUP);
-
 	}
 
 	@Then("^User navigates the landing signup page$")
@@ -51,5 +46,5 @@ public class LandingPageStepDef extends Browser {
 		Assert.assertTrue(Generic.verifyElement("id", LandingSiteOR.registrationConfrim));
 	}
 	
-
+	
 }
