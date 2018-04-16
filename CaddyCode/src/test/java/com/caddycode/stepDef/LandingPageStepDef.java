@@ -2,7 +2,6 @@ package com.caddycode.stepDef;
 
 import org.junit.Assert;
 import org.openqa.selenium.WebDriver;
-
 import com.caddycode.ObjectRepository.LandingSiteOR;
 import com.caddycode.browser.Browser;
 import com.caddycode.helper.Generic;
@@ -18,7 +17,7 @@ public class LandingPageStepDef extends Browser {
 	public LandingPageStepDef() {
 		super();
 	}
-	
+
 	@Given("^User navigates to the Landing Page$")
 	public void user_navigates_to_the_Landing_Page() throws Throwable {
 		String Landingurl = prop.getProperty("Landingurl");
