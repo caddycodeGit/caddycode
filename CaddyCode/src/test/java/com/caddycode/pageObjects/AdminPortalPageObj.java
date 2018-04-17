@@ -24,7 +24,6 @@ public class AdminPortalPageObj {
 		Generic.enterValue("id", AdminPortalOR.UserName, userName);
 		Generic.enterValue("id", AdminPortalOR.password, password);
 		
-		
 	}
 
 }
