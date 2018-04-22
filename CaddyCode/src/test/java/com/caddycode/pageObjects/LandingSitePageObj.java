@@ -28,7 +28,7 @@ public class LandingSitePageObj {
 		
 		Thread.sleep(3000);
 		Generic.enterValue("id", LandingSiteOR.firstName, dataArray[i].get("FirstName"));
-		Generic.enterValue("id", LandingSiteOR.lastName,dataArray[i].get("LastName"));
+		//Generic.enterValue("id", LandingSiteOR.lastName,dataArray[i].get("LastName"));
 		Generic.enterValue("id", LandingSiteOR.email, dataArray[i].get("Email"));
 		Generic.enterValue("id", LandingSiteOR.facilityName,dataArray[i].get("FacilityName"));
 		Generic.enterValue("id", LandingSiteOR.domailURl, dataArray[i].get("DomainURL"));

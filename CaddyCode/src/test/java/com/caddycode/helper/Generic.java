@@ -29,20 +29,16 @@ public class Generic extends Browser {
 		while(!xls.getCellData(sheetname,testcaseStartrow, 0).equals(testcaseName)){
 			testcaseStartrow++;
 		}
-		System.out.println(testcaseName+" start row num is "+testcaseStartrow);
 		int testDataStartrownum=testcaseStartrow+2;
 		int rows=0;
 		while(!xls.getCellData(sheetname, testDataStartrownum+rows, 0 ).equals("")){
 			rows++;
-		}
-		System.out.println(testcaseName+ " rows are "+rows);
-		
+		}		
 		int colStartRownum=testcaseStartrow+1;
 		int cols=0;
 		while(!xls.getCellData(sheetname,colStartRownum, cols).equals("")){
 			cols++;
 		}
-		System.out.println(testcaseName+ " cols are "+cols);
 		Hashtable [] data=new Hashtable[rows];
 		Hashtable<String,String> table=null;
 		int index=0;
@@ -51,7 +47,7 @@ public class Generic extends Browser {
 			for(int cNum=0;cNum<cols;cNum++){
 				String key=xls.getCellData(sheetname, colStartRownum, cNum);
 				String value=xls.getCellData(sheetname, rNum,  cNum);
-				//System.out.print(xls.getCellData(sheetname, cNum, rNum)+"--");
+				
 				table.put(key, value);
 			}
 			data[index]=table;
