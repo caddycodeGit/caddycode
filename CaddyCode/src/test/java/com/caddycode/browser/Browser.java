@@ -7,6 +7,10 @@ import java.util.concurrent.TimeUnit;
 
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.chrome.ChromeDriver;
+import org.openqa.selenium.firefox.FirefoxDriver;
+import org.openqa.selenium.ie.InternetExplorerDriver;
+import org.openqa.selenium.remote.CapabilityType;
+import org.openqa.selenium.remote.DesiredCapabilities;
 
 public class Browser {
 	
@@ -62,9 +66,31 @@ public class Browser {
 	public static void launchApplication()
 	{
 		String browserName = prop.getProperty("browserName");
+		switch(browserName)
+		{
+		case "chrome":
+			System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\lib\\chromedriver.exe");
+			driver=new ChromeDriver();
+			break;
 		
-		System.setProperty("webdriver.chrome.driver", System.getProperty("user.dir")+"\\lib\\chromedriver.exe");
-		driver=new ChromeDriver();
+		case "ie":
+			 DesiredCapabilities capabilities = DesiredCapabilities.internetExplorer();			  
+			 capabilities.setCapability(CapabilityType.BROWSER_NAME, "IE");
+			 capabilities.setCapability(InternetExplorerDriver.
+			   INTRODUCE_FLAKINESS_BY_IGNORING_SECURITY_DOMAINS,true);
+			System.setProperty("webdriver.ie.driver", System.getProperty("user.dir")+"\\lib\\IEDriverServer.exe");
+			driver=new InternetExplorerDriver(capabilities);
+			break;
+		case "3":
+			driver = new FirefoxDriver();
+		break;
+		case "4":
+			
+			break;
+		
+			
+		}
+		
 		
 	}
 	

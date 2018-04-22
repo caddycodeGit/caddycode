@@ -23,16 +23,18 @@ public class LandingSitePageObj {
 	{
 		boolean status = false;
 		Hashtable<String,String>[] dataArray = Generic.getData(xls, "Sheet1", "SignUp");
-		System.out.println(dataArray[0].get("FirstName"));
+		for(int i=0;i<dataArray.length;i++)
+		{
 		
 		Thread.sleep(3000);
-		Generic.enterValue("id", LandingSiteOR.firstName, dataArray[0].get("FirstName"));
-		Generic.enterValue("id", LandingSiteOR.lastName,dataArray[0].get("LastName"));
-		Generic.enterValue("id", LandingSiteOR.email, dataArray[0].get("Email"));
-		Generic.enterValue("id", LandingSiteOR.facilityName,dataArray[0].get("FacilityName"));
-		Generic.enterValue("id", LandingSiteOR.domailURl, dataArray[0].get("DomainURL"));
-		Generic.enterValue("id", LandingSiteOR.phoneNumber, dataArray[0].get("PhoneNumber"));
+		Generic.enterValue("id", LandingSiteOR.firstName, dataArray[i].get("FirstName"));
+		Generic.enterValue("id", LandingSiteOR.lastName,dataArray[i].get("LastName"));
+		Generic.enterValue("id", LandingSiteOR.email, dataArray[i].get("Email"));
+		Generic.enterValue("id", LandingSiteOR.facilityName,dataArray[i].get("FacilityName"));
+		Generic.enterValue("id", LandingSiteOR.domailURl, dataArray[i].get("DomainURL"));
+		Generic.enterValue("id", LandingSiteOR.phoneNumber, dataArray[i].get("PhoneNumber"));
 		Generic.clickElement("id", LandingSiteOR.getStartedNOw);
+		}
 		Thread.sleep(5000);
 		status = true;
 		return status;
